@@ -80,7 +80,7 @@ The sector displays **moderate fragmentation paired with tiered concentration**:
 
 🛠️ Self-hosted, community-driven Webhook and Event Notification tools sorted by GitHub stargazers count (descending).
 
-| 📦 Repository | ⭐ GitHub Stars | 💻 Stack | 📜 License | 📝 Description |
+| 📦 Repository | ⭐ GitHub_Stars | 💻 Stack | 📜 License | 📝 Description |
 | :--- | :--- | :--- | :--- | :--- |
 | **Novu** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | TypeScript / Node.js | MIT / Apache-2.0 | The open-source communication infrastructure for agents and products. Orchestrates transactional notifications with webhook destinations, subscriber preferences, workflows, and multi-channel delivery. |
 | **adnanh/webhook** | [![Stars](https://img.shields.io/github/stars/adnanh/webhook?style=social&color=white)](https://github.com/adnanh/webhook/stargazers) | Go | MIT | A lightweight incoming webhook server that lets you easily configure HTTP endpoints to execute shell commands and automation pipelines on your server. |
