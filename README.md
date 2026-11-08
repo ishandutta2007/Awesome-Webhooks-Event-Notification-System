@@ -9,119 +9,77 @@
 
 ## 📋 Table of Contents
 
+- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
 - [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-  - [Svix](#svix)
-  - [Hookdeck](#hookdeck)
-  - [Zapier Webhooks](#zapier-webhooks)
-  - [Make Webhooks](#make-webhooks)
-  - [Pipedream](#pipedream)
-  - [Courier](#courier)
-  - [Webhook.site](#webhooksite)
-  - [RequestBin](#requestbin)
 - [Open-Source Software](#-open-source-software)
-  - [Outpost (Hookdeck)](#outpost-hookdeck)
-  - [Convoy](#convoy)
-  - [WebhookX](#webhookx)
-  - [Webhook Tester (tarampampam)](#webhook-tester-tarampampam)
-  - [fasthook](#fasthook)
-  - [Hook0](#hook0)
 - [Comparison at a Glance](#-comparison-at-a-glance)
 - [Contributing](#-contributing)
 
 ---
 
+## 📈 Sector Overview & Market Dynamics
+
+The global Event-Driven Architecture (EDA) and webhook infrastructure market is estimated at approximately **$3.7 billion** (growing at an estimated 21.5% CAGR), driven by enterprise API adoption, microservices decoupling, and asynchronous agentic AI workflows. The market exhibits **moderate fragmentation with tiered concentration**: general workflow and automation glue layers operate as winner-take-most ecosystems (e.g., Celonis/Make, Zapier), whereas dedicated Webhooks-as-a-Service (WaaS) and delivery gateways remain specialized and competitive across niche developer-infrastructure segments.
+
+---
+
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Webhook and Event Notification platforms. These are not open-source but are included as reference points for feature comparison.
+Commercial, cloud-hosted Webhook and Event Notification platforms sorted by company scale (valuation / annual revenue, descending).
 
-### Svix
-**Type:** Webhooks-as-a-service platform  
-Svix is the leading commercial webhooks platform, offering a complete API for sending webhooks with built-in deliverability, retries, security (HMAC signing), and a white-label receiver portal [citation:4][citation:8]. The platform handles endpoint management, event type catalogs with schemas, filtering, transformations, and observability. Pricing tiers include a free tier for small volumes, with SLAs scaling from 99.9% to 99.999% on Enterprise [citation:8]. The core server is also open-source under MIT, making it a rare example of a commercial platform with a genuinely open-source core [citation:4].  
-**Best for:** SaaS companies wanting to add production-grade webhooks to their product without building delivery infrastructure from scratch.
-
-### Hookdeck
-**Type:** Event gateway with webhook proxy and queue  
-Hookdeck provides a webhook proxy and durable message queue that sits between providers and your application, guaranteeing ingestion even during downtime or traffic spikes [citation:6]. It eliminates the need for your own message queue for webhook processing — your handler just does business logic and returns a status code. Features include automatic retries, replay, rate limiting, filtering, transformations, and observability. The CLI (`hookdeck listen`) provides free, permanent event URLs for local development without ngrok [citation:13].  
-**Best for:** Teams wanting to offload webhook reliability concerns (queueing, retries, replay) to a managed gateway.
-
-### Zapier Webhooks
-**Type:** Webhook triggers and actions within automation  
-Zapier provides "Webhooks by Zapier" as a built-in app with triggers (Catch Hook, Catch Raw Hook) and actions (POST, GET, PUT). Commonly used to connect webhook-emitting services to 7,000+ apps without code. Lacks dedicated webhook infrastructure features like retries, signing, or observability — it is a lightweight glue layer.
-
-### Make Webhooks
-**Type:** Webhook modules within visual automation  
-Make provides webhook modules (Custom Webhook, Webhook Response) within its visual scenario builder. Supports instant triggers via webhooks, with the ability to parse payloads, branch logic, and respond to the caller. More flexible than Zapier for webhook processing but still not a dedicated webhook delivery platform.
-
-### Pipedream
-**Type:** Developer-focused event source platform  
-Pipedream provides HTTP webhook triggers and event sources as part of its workflow automation platform. Offers a code-first approach with Node.js/Python steps, built-in authentication handling, and event history. Suited for developers wanting programmatic control over webhook processing.
-
-### Courier
-**Type:** Notification infrastructure with webhook delivery  
-Courier focuses on multi-channel notifications (email, SMS, push, chat) and includes webhook as a delivery channel. Provides templating, routing, and delivery tracking across channels. While not a pure webhook platform, it handles outbound webhook notifications as part of a broader notification orchestration system.
-
-### Webhook.site
-**Type:** Instant webhook testing and inspection  
-Webhook.site generates a unique URL instantly for inspecting incoming HTTP requests and webhooks. Provides a web UI showing headers, body, query parameters, and method. A free, browser-based tool for quick debugging without local setup. Limited persistence and no production delivery features.
-
-### RequestBin
-**Type:** Request inspection and debugging  
-RequestBin (now part of Pipedream) creates a unique endpoint for collecting and inspecting HTTP requests. Similar to Webhook.site, it is focused on debugging rather than production delivery. Useful for seeing exactly what a provider is sending.
+| Platform | Type | Scale (Valuation / Revenue) | Paid Pricing (Starting Tier) | Free Tier Limits | Key Highlights |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Make Webhooks** | Visual automation glue & webhook triggers | **$13.0B valuation** *(Parent: Celonis; ~$400M–$771M ARR)* | **$9.00 / month** *(Core plan, billed annually at $108/yr)* | **1,000 operations/month**, 2 active scenarios, 15-min minimum scheduling interval, 5 MB file execution cap *(Free forever)* | Visual scenario orchestrator with instant webhook triggers and response modules. |
+| **Zapier Webhooks** | Automation glue & webhook triggers | **$5.0B valuation** *(~$310M ARR, profitable)* | **$19.99 / month** *(Professional plan, billed annually; or $29.99/mo)* | **100 tasks/month**, unlimited 2-step Zaps, 15-min update intervals, 1 user seat *(Free forever)* | Connects webhook-emitting applications to 7,000+ destinations without custom code. |
+| **RequestBin** | Request inspection, mocking & event debugging | **$80M valuation** *(Acquired by Workday; parent Pipedream)* | **$12.00 / month** *(RequestBin Pro plan)* | **3 named bins**, 500 requests/bin/day, latest 100 requests history, 1 mock API, 5 API keys *(Free forever)* | Dedicated endpoint generator for capturing, inspecting, and relaying incoming webhook payloads. |
+| **Pipedream** | Developer-focused event source & workflow runtime | **$80M valuation** *(Acquired by Workday; $20M Series A raised)* | **$99.00 / month** *(Startup plan, billed annually; or $150/mo)* | **Daily pool capped at ~100 credits/month** (1 credit = 30s compute @ 256MB), development/testing environment only *(Free forever)* | Code-level webhook trigger manipulation supporting Node.js/Python serverless actions. |
+| **Courier** | Multi-channel notification & webhook orchestration | **~$57M venture funding raised** *(Bessemer, GV, Twilio)* | **$0.005 / notification** *(Pay-as-you-go Pro tier, no mandatory base minimum)* | **10,000 sends/month**, multi-channel delivery (webhooks, email, push, SMS), 1 user seat *(Free forever)* | Orchestrates cross-channel transactional notifications with outbound webhook delivery routing. |
+| **Svix** | Dedicated Webhooks-as-a-service infrastructure | **~$25M–$50M valuation** *($13.1M venture funding raised; a16z)* | **$20.00 / month** *(Basic plan + usage consumption)* | **50,000 messages/month**, 50 messages/sec throughput, 7-day log retention *(Free forever)* | Turnkey outbound webhooks with HMAC signatures, retry queuing, schema validation, and customer portal. |
+| **Hookdeck** | Event gateway, proxy & inbound queueing | **~$10M–$15M valuation** *($2.7M venture funding raised; Matrix Partners)* | **$39.00 / month** *(Team plan; or $10/M events on Outpost Starter)* | **10,000 events/month**, 3-day data retention, 1 user seat *(Free forever)* | Resilient webhook gateway providing buffering, exponential backoff retries, and local tunneling. |
+| **Webhook.site** | Instant webhook testing & payload inspection | **~$250K+ ARR** *(Bootstrapped by Simon Fredsted / Webhook ApS)* | **$9.00 / month** *(Basic plan; or $90/year)* | **50 requests max per URL**, 50 requests storage history, temporary URLs auto-expire after 7 days *(Free forever)* | Zero-setup browser endpoint for immediate HTTP request inspection, header debugging, and automated scripts. |
 
 ---
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven Webhook and Event Notification tools. All listed projects offer source code you can deploy on your own infrastructure.
+Self-hosted, community-driven Webhook and Event Notification tools sorted by GitHub stargazers count (descending).
 
-### Outpost (Hookdeck)
-**Stack:** Go | **License:** Apache-2.0  
-An open-source outbound webhooks and event destinations infrastructure built by Hookdeck [citation:2]. Supports webhooks, Hookdeck Event Gateway, Amazon EventBridge, AWS SQS, AWS S3, GCP Pub/Sub, RabbitMQ, and Kafka as destination types. Features include topic-based subscriptions, publish via API or queue, at-least-once delivery guarantee, event fanout, automatic and manual retries, multi-tenant support, a user portal for customers, delivery failure alerts, and OpenTelemetry integration. Ships with Go, Python, and TypeScript SDKs plus an MCP server [citation:2]. Runtime dependencies are minimal (Redis, PostgreSQL, and an optional message queue).  
-**Best for:** Platforms wanting to add production-grade outbound webhooks to their product without building delivery, retry, and tenant management from scratch.
-
-### Convoy
-**Stack:** Go | **License:** Open Source (per project)  
-An open-source high-performance webhooks gateway for managing millions of webhooks end-to-end [citation:5]. Supports both **incoming** projects (receive webhooks from providers with a unique URL per provider) and **outgoing** projects (publish events from your systems to your customers via API) [citation:12]. Features include retries, filtering, transformations, portal links, and observability. Positioned as a complete webhook proxy that can both ingest from providers and publish to customers.  
-**Best for:** Teams needing a unified gateway for both receiving provider webhooks and sending outbound webhooks to customers.
-
-### WebhookX
-**Stack:** Go | **License:** Open Source (production license required for commercial use)  
-An open-source webhook gateway for receiving, validating, transforming, and delivering events at scale [citation:9]. Features include an Admin API, reliable delivery with automatic retries, fanout to multiple endpoints by event type, rate limiting, declarative configuration (GitOps-oriented), plugins (WASM transforms, signature verification, event validation), and OpenTelemetry observability. Requires PostgreSQL and Redis. **Note:** Multi-tenancy and secret management require a license; free production licenses are available for eligible non-commercial use [citation:9].  
-**Best for:** Teams wanting a Go-based, plugin-extensible webhook gateway with declarative configuration and GitOps workflows.
-
-### Webhook Tester (tarampampam)
-**Stack:** Go / React | **License:** Open Source (per repository)  
-A free, self-hosted alternative to webhook.site and RequestBin [citation:7]. Generates unique URLs for capturing and inspecting HTTP requests. Features include customizable response codes/headers/body, WebSocket real-time UI updates, optional ngrok tunneling for exposing local instances to the internet, three storage drivers (memory, Redis, filesystem), and a lightweight Docker image. Supports pre-defined static webhook URLs via UUID prefixes with `--auto-create-sessions` [citation:7].  
-**Best for:** Developers and teams wanting a self-hosted, privacy-respecting webhook inspector for debugging and testing.
-
-### fasthook
-**Stack:** Python / FastAPI | **License:** Open Source (per PyPI)  
-A local webhook receiver for testing and development with no ngrok, no cloud dashboard, and no signup [citation:3]. Version 2.0 adds production-ready features: mock server mode with scripted responses, event replay with adjustable speed, forwarding with exponential backoff retries, connection pooling, structured logging, and graceful shutdown. Saves events as newline-delimited JSON for use with `jq` or pandas. Installable via `pip install fasthook` [citation:3].  
-**Best for:** Developers wanting a simple, scriptable local webhook catcher that can also mock responses and replay events for testing.
-
-### Hook0
-**Stack:** (Check repository) | **License:** Open Source (per project)  
-An open-source webhooks-as-a-service platform with a dashboard, receiver portal (basic branding), event types, and subscriptions by event type [citation:8]. Supports custom headers, and offers EU region data residency. Metrics API available; OpenTelemetry is not supported. Retention tiers range from 7 to 30 days. SLA of 99.9% on paid tiers.  
-**Best for:** European teams wanting a self-hostable webhooks platform with EU data residency and a basic customer portal.
+| Repository | GitHub Stars | Stack | License | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Novu** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | TypeScript / Node.js | MIT / Apache-2.0 | The open-source communication infrastructure for agents and products. Orchestrates transactional notifications with webhook destinations, subscriber preferences, workflows, and multi-channel delivery. |
+| **adnanh/webhook** | [![Stars](https://img.shields.io/github/stars/adnanh/webhook?style=social&color=white)](https://github.com/adnanh/webhook/stargazers) | Go | MIT | A lightweight incoming webhook server that lets you easily configure HTTP endpoints to execute shell commands and automation pipelines on your server. |
+| **Webhook.site (OSS)** | [![Stars](https://img.shields.io/github/stars/webhooksite/webhook.site?style=social&color=white)](https://github.com/webhooksite/webhook.site/stargazers) | PHP / Laravel / Vue.js | MIT | Self-hosted version of Webhook.site to test, inspect, and debug incoming HTTP webhooks, requests, and email payloads with an instant real-time web UI. |
+| **Svix (Core)** | [![Stars](https://img.shields.io/github/stars/svix/svix-webhooks?style=social&color=white)](https://github.com/svix/svix-webhooks/stargazers) | Rust | MIT / Apache-2.0 | Enterprise-ready, open-source webhooks-as-a-service engine written in Rust. Features reliable outbound delivery, HMAC verification, retry mechanisms, and tenant management. |
+| **Convoy** | [![Stars](https://img.shields.io/github/stars/frain-dev/convoy?style=social&color=white)](https://github.com/frain-dev/convoy/stargazers) | Go | MPL-2.0 / Business Source | High-performance, cloud-native webhooks proxy and gateway supporting both incoming provider webhooks and outgoing customer event publishing. |
+| **Standard Webhooks** | [![Stars](https://img.shields.io/github/stars/standard-webhooks/standard-webhooks?style=social&color=white)](https://github.com/standard-webhooks/standard-webhooks/stargazers) | Multi-language SDKs | Apache-2.0 | Open, industry-wide specification for secure and uniform webhook delivery, signatures, headers, and payload verification, backed by Svix and industry contributors. |
+| **Hook0** | [![Stars](https://img.shields.io/github/stars/hook0/hook0?style=social&color=white)](https://github.com/hook0/hook0/stargazers) | Rust | LGPL-3.0 | Open-source webhooks-as-a-service server providing tenant management, event routing, webhook subscriptions, and delivery retry instrumentation. |
+| **webhookd** | [![Stars](https://img.shields.io/github/stars/ncarlier/webhookd?style=social&color=white)](https://github.com/ncarlier/webhookd/stargazers) | Go | MIT | A minimalist, powerful webhook server designed to trigger shell scripts, Docker containers, and external worker processes from HTTP notifications. |
+| **Hookdeck Outpost** | [![Stars](https://img.shields.io/github/stars/hookdeck/outpost?style=social&color=white)](https://github.com/hookdeck/outpost/stargazers) | Go | Apache-2.0 | Open-source outbound webhooks infrastructure by Hookdeck. Delivers reliable event routing, topic fanout, multi-tenancy, and at-least-once delivery to webhooks, SQS, EventBridge, Kafka, and GCP Pub/Sub. |
+| **Webhook Tester** | [![Stars](https://img.shields.io/github/stars/tarampampam/webhook-tester?style=social&color=white)](https://github.com/tarampampam/webhook-tester/stargazers) | Go / React | MIT | Self-hosted alternative to RequestBin and Webhook.site with real-time WebSocket UI updates, customizable mock responses, and Docker packaging. |
+| **WebhookX** | [![Stars](https://img.shields.io/github/stars/webhookx-io/webhookx?style=social&color=white)](https://github.com/webhookx-io/webhookx/stargazers) | Go | Apache-2.0 | Extensible webhook gateway for receiving, validating, transforming, and fanning out webhook events with WASM plugin support, rate limiting, and GitOps configuration. |
+| **fasthook** | [![Stars](https://img.shields.io/github/stars/alencmanis/fasthook-cli?style=social&color=white)](https://github.com/alencmanis/fasthook-cli/stargazers) | TypeScript / Node.js | MIT | Local webhook receiver and tunneling CLI that forwards incoming webhook traffic directly to localhost environments for local testing without cloud dashboards. |
 
 ---
 
 ## 📊 Comparison at a Glance
 
 | Software | License | Type | Inbound | Outbound | Self-Hosted | Best For |
-|----------|---------|------|---------|----------|-------------|----------|
-| **Svix** | Proprietary (MIT core) | Webhooks-as-a-service | ❌ | ✅ | ✅ (core) | Product webhooks with SLA |
-| **Hookdeck** | Proprietary | Event gateway | ✅ | ✅ | ❌ | Managed webhook reliability |
-| **Zapier Webhooks** | Proprietary | Automation glue | ✅ | ✅ | ❌ | No-code app connections |
-| **Make Webhooks** | Proprietary | Automation glue | ✅ | ✅ | ❌ | Visual webhook scenarios |
-| **Pipedream** | Proprietary | Developer event source | ✅ | ✅ | ❌ | Code-first webhook processing |
-| **Webhook.site** | Proprietary | Testing/inspection | ✅ | ❌ | ❌ | Quick browser-based debugging |
-| **Outpost** | Apache-2.0 | Outbound webhook infra | ❌ | ✅ | ✅ | Product outbound webhooks |
-| **Convoy** | Open Source | Webhook gateway | ✅ | ✅ | ✅ | Unified inbound + outbound |
-| **WebhookX** | Open Source (licensed) | Webhook gateway | ✅ | ✅ | ✅ | Plugin-extensible gateway |
-| **Webhook Tester** | Open Source | Testing/inspection | ✅ | ❌ | ✅ | Self-hosted inspector |
-| **fasthook** | Open Source | Local receiver | ✅ | ❌ | ✅ (local) | Dev testing + replay |
-| **Hook0** | Open Source | Webhooks platform | ❌ | ✅ | ✅ | EU self-hosted webhooks |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Novu** | Open Source (MIT) | Notification engine | ✅ | ✅ | ✅ | Multi-channel & webhook notifications |
+| **Svix** | Open Source (MIT core) / SaaS | Webhooks-as-a-service | ❌ | ✅ | ✅ | Turnkey outbound webhooks with portal |
+| **Hookdeck** | Open Source (Outpost) / SaaS | Event gateway | ✅ | ✅ | ✅ (Outpost) | Webhook proxy, buffering & fanout |
+| **adnanh/webhook** | Open Source (MIT) | Webhook runner | ✅ | ❌ | ✅ | Executing server scripts via webhooks |
+| **Webhook.site** | Open Source (MIT) / SaaS | Testing & inspection | ✅ | ❌ | ✅ | Fast payload debugging & capture |
+| **Convoy** | Open Source / SaaS | Webhook gateway | ✅ | ✅ | ✅ | Inbound + outbound gateway at scale |
+| **Zapier Webhooks** | Commercial SaaS | Automation glue | ✅ | ✅ | ❌ | No-code multi-app triggers |
+| **Make Webhooks** | Commercial SaaS | Automation glue | ✅ | ✅ | ❌ | Complex visual workflow branching |
+| **Pipedream** | Commercial SaaS | Event source / runtime | ✅ | ✅ | ❌ | Developer code-first integrations |
+| **RequestBin** | Commercial SaaS | Testing & inspection | ✅ | ❌ | ❌ | Capturing & relaying HTTP payloads |
+| **Hook0** | Open Source (LGPL-3.0) | Webhooks platform | ❌ | ✅ | ✅ | EU data-resident webhook dispatch |
+| **webhookd** | Open Source (MIT) | Webhook script trigger | ✅ | ❌ | ✅ | Lightweight shell automation server |
+| **Webhook Tester** | Open Source (MIT) | Testing & inspection | ✅ | ❌ | ✅ | Self-hosted inspector UI |
+| **WebhookX** | Open Source (Apache-2.0) | Webhook gateway | ✅ | ✅ | ✅ | WASM-extensible event gateway |
+| **fasthook** | Open Source (MIT) | Local tunnel / receiver | ✅ | ❌ | ✅ | Local development & forwarding |
 
 ---
 
