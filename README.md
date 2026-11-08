@@ -1,33 +1,69 @@
-# Awesome-Webhooks-Event-Notification-System
-
 # Awesome Webhooks & Event Notification System
 
-> A curated list of top Webhooks and Event Notification System platforms — both SaaS/Hosted commercial solutions and open-source alternatives for reliable webhook delivery, event routing, and local debugging.  
-> 🌟 Star this repo if you find it useful! 🌟
+<div align="center">
+
+<a href="https://github.com/ishandutta2007/Awesome-Webhooks-Event-Notification-System">
+  <img src="assets/banner.svg" alt="Awesome Webhooks &amp; Event Notification System Banner" width="100%">
+</a>
+
+<br/>
+<br/>
+
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+<a href="https://github.com/ishandutta2007/Awesome-Webhooks-Event-Notification-System/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Webhooks-Event-Notification-System?style=flat-square&color=yellow" alt="Stars" /></a>
+<a href="https://github.com/ishandutta2007/Awesome-Webhooks-Event-Notification-System/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Webhooks-Event-Notification-System?style=flat-square&color=blue" alt="Forks" /></a>
+<a href="https://github.com/ishandutta2007/Awesome-Webhooks-Event-Notification-System/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg?style=flat-square" alt="License" /></a>
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+
+<p align="center">
+  <strong>🚀 A comprehensive, production-grade directory of Webhooks-as-a-Service (WaaS), Event Gateways, Notification Engines, and Local Webhook Debugging Tools.</strong>
+</p>
+
+<p align="center">
+  <a href="#-table-of-contents">Documentation</a> •
+  <a href="#-sector-overview--market-dynamics">Market Analysis</a> •
+  <a href="#-saas--hosted-platforms">Commercial SaaS</a> •
+  <a href="#-open-source-software">Open Source</a> •
+  <a href="#-comparison-at-a-glance">Feature Matrix</a> •
+  <a href="#-support--sponsor">Support</a>
+</p>
+
+</div>
+
+---
+
+> 💡 **Search Keywords / Topics:** *webhooks, event-driven architecture, webhooks as a service, event notification system, webhook proxy, webhook gateway, event delivery, HMAC verification, retry logic, dead letter queue, event routing, transactional notifications, Svix, Hookdeck, Novu.*
 
 ---
 
 ## 📋 Table of Contents
 
-- [Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
-- [SaaS / Hosted Platforms](#-saas--hosted-platforms)
-- [Open-Source Software](#-open-source-software)
-- [Comparison at a Glance](#-comparison-at-a-glance)
-- [Contributing](#-contributing)
+- [📈 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🟦 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [🟩 Open-Source Software](#-open-source-software)
+- [📊 Comparison at a Glance](#-comparison-at-a-glance)
+- [🌟 Star History](#-star-history)
+- [💖 Support & Sponsor](#-support--sponsor)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
 
 ---
 
 ## 📈 Sector Overview & Market Dynamics
 
-The global Event-Driven Architecture (EDA) and webhook infrastructure market is estimated at approximately **$3.7 billion** (growing at an estimated 21.5% CAGR), driven by enterprise API adoption, microservices decoupling, and asynchronous agentic AI workflows. The market exhibits **moderate fragmentation with tiered concentration**: general workflow and automation glue layers operate as winner-take-most ecosystems (e.g., Celonis/Make, Zapier), whereas dedicated Webhooks-as-a-Service (WaaS) and delivery gateways remain specialized and competitive across niche developer-infrastructure segments.
+The global **Event-Driven Architecture (EDA)** and webhook infrastructure market is estimated at approximately **$3.7 billion** (projected to expand at a **21.5% CAGR**), catalyzed by the explosive growth of microservices decoupling, third-party API ecosystems, and asynchronous agentic AI triggers. 
+
+The sector displays **moderate fragmentation paired with tiered concentration**:
+- 🌐 **Workflow Automation & Glue Layers:** Concentrated around dominant multi-billion dollar ecosystems (such as Celonis/Make and Zapier) capturing broad end-user workflows.
+- ⚙️ **Dedicated Webhooks-as-a-Service (WaaS) & Gateways:** Specialized and fragmented across developer-first infrastructure providers (Svix, Hookdeck, Convoy, Novu) competing on sub-millisecond dispatch SLAs, zero-loss ingestion buffering, HMAC signature standardization, and granular event observability.
 
 ---
 
 ## 🟦 SaaS / Hosted Platforms
 
-Commercial, cloud-hosted Webhook and Event Notification platforms sorted by company scale (valuation / annual revenue, descending).
+⚡ Commercial, cloud-hosted Webhook and Event Notification platforms sorted by company scale (valuation / annual revenue, descending).
 
-| Platform | Type | Scale (Valuation / Revenue) | Paid Pricing (Starting Tier) | Free Tier Limits | Key Highlights |
+| 🏢 Platform | 🏷️ Type | 💰 Scale (Valuation / Revenue) | 💳 Paid Pricing (Starting Tier) | 🎁 Free Tier Limits | 🚀 Key Highlights |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Make Webhooks** | Visual automation glue & webhook triggers | **$13.0B valuation** *(Parent: Celonis; ~$400M–$771M ARR)* | **$9.00 / month** *(Core plan, billed annually at $108/yr)* | **1,000 operations/month**, 2 active scenarios, 15-min minimum scheduling interval, 5 MB file execution cap *(Free forever)* | Visual scenario orchestrator with instant webhook triggers and response modules. |
 | **Zapier Webhooks** | Automation glue & webhook triggers | **$5.0B valuation** *(~$310M ARR, profitable)* | **$19.99 / month** *(Professional plan, billed annually; or $29.99/mo)* | **100 tasks/month**, unlimited 2-step Zaps, 15-min update intervals, 1 user seat *(Free forever)* | Connects webhook-emitting applications to 7,000+ destinations without custom code. |
@@ -42,9 +78,9 @@ Commercial, cloud-hosted Webhook and Event Notification platforms sorted by comp
 
 ## 🟩 Open-Source Software
 
-Self-hosted, community-driven Webhook and Event Notification tools sorted by GitHub stargazers count (descending).
+🛠️ Self-hosted, community-driven Webhook and Event Notification tools sorted by GitHub stargazers count (descending).
 
-| Repository | GitHub Stars | Stack | License | Description |
+| 📦 Repository | ⭐ GitHub Stars | 💻 Stack | 📜 License | 📝 Description |
 | :--- | :--- | :--- | :--- | :--- |
 | **Novu** | [![Stars](https://img.shields.io/github/stars/novuhq/novu?style=social&color=white)](https://github.com/novuhq/novu/stargazers) | TypeScript / Node.js | MIT / Apache-2.0 | The open-source communication infrastructure for agents and products. Orchestrates transactional notifications with webhook destinations, subscriber preferences, workflows, and multi-channel delivery. |
 | **adnanh/webhook** | [![Stars](https://img.shields.io/github/stars/adnanh/webhook?style=social&color=white)](https://github.com/adnanh/webhook/stargazers) | Go | MIT | A lightweight incoming webhook server that lets you easily configure HTTP endpoints to execute shell commands and automation pipelines on your server. |
@@ -63,8 +99,8 @@ Self-hosted, community-driven Webhook and Event Notification tools sorted by Git
 
 ## 📊 Comparison at a Glance
 
-| Software | License | Type | Inbound | Outbound | Self-Hosted | Best For |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 🛠️ Software | 📜 License | 🏷️ Type | 📥 Inbound | 📤 Outbound | 🖥️ Self-Hosted | 🎯 Best For |
+| :--- | :--- | :--- | :---: | :---: | :---: | :--- |
 | **Novu** | Open Source (MIT) | Notification engine | ✅ | ✅ | ✅ | Multi-channel & webhook notifications |
 | **Svix** | Open Source (MIT core) / SaaS | Webhooks-as-a-service | ❌ | ✅ | ✅ | Turnkey outbound webhooks with portal |
 | **Hookdeck** | Open Source (Outpost) / SaaS | Event gateway | ✅ | ✅ | ✅ (Outpost) | Webhook proxy, buffering & fanout |
@@ -83,14 +119,34 @@ Self-hosted, community-driven Webhook and Event Notification tools sorted by Git
 
 ---
 
+##  Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Webhooks-Event-Notification-System&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Webhooks-Event-Notification-System&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsor
+
+Thank you for exploring and using **Awesome Webhooks & Event Notification System**! 🙏
+
+If you found this list helpful for building your developer stack or discovering new tools, please consider showing your support:
+- ⭐ **Star this repository** to help others discover it on GitHub.
+- 🍴 **Fork the repository** and contribute your own discoveries or updates.
+- 📢 **Share it** on X / Twitter, LinkedIn, Reddit, or developer Discord channels.
+- ☕ **Buy me a coffee / Sponsor:** If you'd like to support ongoing maintenance and new curated resources, you can sponsor through the dashboard:
+  
+  👉 **[Sponsor Ishan Dutta on GitHub](https://github.com/sponsors/ishandutta2007)** 💖
+
+---
+
 ## 🤝 Contributing
 
-Contributions are welcome! If you know of an open-source Webhook or Event Notification tool that should be listed here, please open a pull request with:
+Contributions are very welcome! If you know of an open-source Webhook or Event Notification tool that should be listed here, please open a pull request with:
 
-- Project name and URL
-- Brief description (1–2 sentences)
-- Stack and license
-- Why it stands out
+- 🏷️ Project name and URL
+- 📝 Brief description (1–2 sentences)
+- 💻 Stack and license
+- 💡 Why it stands out
 
 Please ensure the project is actively maintained (releases within the last 12 months) and genuinely open-source.
 
@@ -98,8 +154,10 @@ Please ensure the project is actively maintained (releases within the last 12 mo
 
 ## 📄 License
 
-This list is released under CC0 1.0 Universal (Public Domain). The software projects listed retain their respective licenses.
+This list is released under [CC0 1.0 Universal (Public Domain)](https://creativecommons.org/publicdomain/zero/1.0/). The individual software projects listed retain their respective licenses.
 
 ---
 
-⭐ **If this list helped you discover a useful tool, please star the repo!** ⭐
+<div align="center">
+  ⭐ <strong>If this list helped you discover a useful tool, please star the repo!</strong> ⭐
+</div>
